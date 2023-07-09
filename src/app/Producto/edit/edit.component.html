@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Editar Producto</h3>
+  <form (ngSubmit)="onSubmit()" #productoForm="ngForm">
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="producto.nombre" required>
+      <div *ngIf="productoForm.controls['nombre'].invalid && productoForm.controls['nombre'].touched" class="text-danger">
+        El nombre es obligatorio.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Stock:</label>
+      <input type="number" class="form-control" name="stock" id="stock" [(ngModel)]="producto.stock" required>
+      <div *ngIf="productoForm.controls['stock'].invalid && productoForm.controls['stock'].touched" class="text-danger">
+        El stock es obligatorio.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Precio:</label>
+      <input type="text" class="form-control" name="precio" id="precio" [(ngModel)]="producto.precio" required>
+      <div *ngIf="productoForm.controls['precio'].invalid && productoForm.controls['precio'].touched" class="text-danger">
+        El precio es obligatorio.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Cantidad:</label>
+      <input type="number" class="form-control" name="cantidad" id="cantidad" [(ngModel)]="producto.cantidad" required>
+      <div *ngIf="productoForm.controls['cantidad'].invalid && productoForm.controls['cantidad'].touched" class="text-danger">
+        La cantidad es obligatoria.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Estado:</label>
+      <input type="text" class="form-control" name="estado" id="estado" [(ngModel)]="producto.estado" required>
+      <div *ngIf="productoForm.controls['estado'].invalid && productoForm.controls['estado'].touched" class="text-danger">
+        El estado es obligatorio.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Imagen:</label>
+      <input type="file" class="form-control" name="imagen" id="imagen" [(ngModel)]="producto.imagen">
+    </div>
+    <button class="btn btn-success" [disabled]="productoForm.invalid">Guardar</button>
+  </form>
+</div>

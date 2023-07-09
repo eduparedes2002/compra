@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="row mt-5" *ngIf="producto">
+        <div class="col-md-4 mx-auto">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header text-center">
+                    Detalle
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Nombre: </b>{{producto.nombre}}</li>
+                    <li class="list-group-item"><b>Stock: </b>{{producto.stock}}</li>
+                    <li class="list-group-item"><b>Precio: </b>{{producto.precio}}Soles</li>
+                    <li class="list-group-item"><b>Cantidad: </b>{{producto.cantidad}}</li>
+                    <li class="list-group-item"><b>Estado: </b>{{producto.estado}}</li>
+                    <li class="list-group-item"><b>Total: </b>{{producto.precio*producto.cantidad}}</li>
+                </ul>
+                <div class="card-footer">
+                    <button (click)="ComprarProducto()" class="btn btn-outline-primary btn-block"><i
+                            class="fas fa-arrow-alt-circle-left"></i>Realizar compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

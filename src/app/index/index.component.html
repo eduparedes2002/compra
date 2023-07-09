@@ -1,0 +1,6 @@
+<app-menu></app-menu>
+<div class="container text-center">
+    <div class="alert alert-primary" role="alert" *ngIf="isLogged; else loggedOut"><h2 class="display-1">Bienvenido {{nombreUsuario}}</h2></div>
+    <ng-template #loggedOut><h2 class="display-1">No has iniciado sesión</h2></ng-template>
+</div>
+
